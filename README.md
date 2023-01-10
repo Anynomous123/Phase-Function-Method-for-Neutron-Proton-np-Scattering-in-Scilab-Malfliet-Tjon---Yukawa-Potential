@@ -15,4 +15,5 @@ OR
 4. Press Function key "F5" this automatically save and execute the program
 5. In Console Window type "Phaseplot()" without quotes
 6. A figure window with required plots is visible.
+
 ![SPS_POT_MT](https://user-images.githubusercontent.com/83568077/211540310-56c39a7a-39a9-4adc-9840-84289a20c682.png)
