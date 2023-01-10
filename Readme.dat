@@ -1,0 +1,19 @@
+__________________________________________________________________________________________________________________________
+This is the readme file for execution of Scattering Phase Shift Programs                                                __
+Please follow these steps :                                                                                             __
+Step-1. Copy or write this code directly into Scinotes windows.                                                         __
+Step-2. Save it with extension .sci                                                                                     __
+Step-3. Now execute this code window using function key 'F5' this automatically save and execute the program.           __
+Step-4. Now in Console window type or simply copy function name (say "Phaseplot()") and paste it here and press return. __
+__________________________________________________________________________________________________________________________
+____________________OR____________________________________________________________________________________________________
+__________________________________________________________________________________________________________________________
+                                                                                                                       __
+1. Download Repository       												   __
+2. Unzip it 														   __ 
+3. Open .sci file with Scilab 											   __											
+4. Press Function key "F5" this automatically save and execute the program						   __
+5. In Console Window type "Phaseplot()" without quotes								   __
+6. A figure window with required plots is visible.                                                                    __
+
+___________________________________________________________________________________________________________________________
