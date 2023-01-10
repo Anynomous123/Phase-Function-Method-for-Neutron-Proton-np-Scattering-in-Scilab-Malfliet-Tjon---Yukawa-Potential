@@ -1,5 +1,5 @@
 # Phase-Function-Method-for-Neutron-Proton-np-Scattering-in-Scilab-Malfliet-Tjon-Potential
-Scilab program for Scattering Phase Shifts for Neutron-Proton Scattering Using Phase Fnction Method using Malfliet-Tjon Potential
+Scilab program for Scattering Phase Shifts for Neutron-Proton Scattering Using Phase Fnction Method with Malfliet-Tjon Potential
 
 How to Run Program.                                                                                                                                         
 This is the readme file for execution of Scattering Phase Shift Programs                                                        
