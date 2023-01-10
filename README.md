@@ -16,4 +16,8 @@ OR
 5. In Console Window type "Phaseplot()" without quotes
 6. A figure window with required plots is visible.
 
+-->exec('/home/lalit/Downloads/Phase_Alone_Github.sci', -1)
+
+-->Phaseplot()
+
 ![SPS_POT_MT](https://user-images.githubusercontent.com/83568077/211540310-56c39a7a-39a9-4adc-9840-84289a20c682.png)
