@@ -20,4 +20,14 @@ OR
 
 -->Phaseplot()
 
-![SPS_POT_MT](https://user-images.githubusercontent.com/83568077/211540310-56c39a7a-39a9-4adc-9840-84289a20c682.png)
+![MTpot](https://user-images.githubusercontent.com/83568077/223094812-37730756-b61d-4a8e-97bb-f1a4c6fdafa8.png)
+
+Uncomment the potential parameters and potential block for Yukawa Potential.
+
+then execute program 
+
+-->exec('/home/lalit/Downloads/Phase_Alone_Github.sci', -1)
+
+-->Phaseplot()
+
+![YukawaPot](https://user-images.githubusercontent.com/83568077/223094802-e04d0a97-038f-4822-bb55-3e811f540cfe.png)
