@@ -3,9 +3,11 @@ mn = 939.565379 //$MeV /c^2$
 Elab = [0.1,1,5,10,25,50,100,150,200,250,300,350]// $MeV$
 ObjVar = [mn,mp,Elab];
 deltaExpt=[169.32, 147.748,118.169,102.587,80.559,62.645,43.088,30.644,21.244,13.551,6.966,1.176]//3S1
-Vparam = [6441.306, 1673.652, 2.323] //3S1
+Vparam = [9435.57, 2134.88, 2.54] //3S1-Malfliet-Tjon Potential
 deltaExpt1S0=[38.43,62.105,63.689,60.038,51.011,40.644,26.772,16.791,8.759,1.982,-3.855,-8.923]//1S0
-Vparam1S0 = [3596.159, 994.549, 2.096] //1S0
+Vparam1S0 = [6806.60, 1522.42, 2.42] //1S0-Malfliet-Tjon Potential
+//Vparam = [50.25, 0.37] //3S1-Yukawa Potential
+//Vparam1S0 = [41.79, 0.61] //1S0-Yukawa Potential
 
 function [k, fac] = input(ObjVar)
     muD = (mn*mp)/(mn + mp);
@@ -15,10 +17,15 @@ function [k, fac] = input(ObjVar)
     k = sqrt(ECoM/fac)
 endfunction
 
-function V = Potential(r, Vparam)
+function V = Potential(r, Vparam)//Malfliet-Tjon Potential
     Vr = Vparam(1); Va = Vparam(2); muA = Vparam(3); 
     V = -Va.*exp(-muA.*r)./r + Vr.*exp(-2.*muA.*r)./r
 endfunction
+
+//function V = Potential(r, Vparam)// Yukawa Potential
+//     Va = Vparam(1); muA = Vparam(2); 
+//    V = -Va.*exp(-muA.*r)./r 
+//endfunction
 
 function F = f(r,delta0,Vparam)
     [k,fac] = input(ObjVar)
