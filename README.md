@@ -40,4 +40,4 @@ NOTE -- Before Executing program **VMC_MT_np.sci** there be small changes in **P
 **COMMENT LINE NUMBER 6 AND 8 OF MAIN PROGRAM Phase_Alone_Github.sci**  
 Now execute this new or the same program with   
 --> exec('/home/lalit/Downloads/Phase_Alone_Github.sci', -1)  
---> [Vparamnew] = VMCnp1S0([100,100,10],10,1) //paramters inside [ ] are onyl for start not the final parameters  
+--> [Vparamnew] = VMCnp1S0([100,100,10],10,1) //paramters inside [ ] are only for start not the final parameters  
