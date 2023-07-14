@@ -1,8 +1,11 @@
-function[constn]=VMCnp1S0(consto,P,b)
-    [y1o,p1s0]=np1S0(consto)//  calling 
-    N=length(p1s0);
+/////////////Variational Monte-Carlo Technique////////////////////////////
+function [Vparamnew] = VMCnp1S0(Vparam,P,b)
+    deltaObt = PFMRK5(Vparam, deltaExpt)//  calling
+    N=length(deltaObt);
+//    [y1o,p1s0]=np1S0(consto)//  calling 
+//    N=length(p1s0);
 ///////////////////////////////////////////////////////////
-nu= (abs((y1o(1:N)'.*(180/%pi))-p1s0(1:N)')).^(2); // to calculate Mean Square Error
+nu= (abs((deltaExpt(1:N)')- deltaObt(1:N)')).^(2); // to calculate Mean Square Error
 den= 1; // for Mean square error
 //  disp(nu)
 //////////////////////////////////////////////////////////////////
@@ -11,38 +14,35 @@ chisqmin=chi
 //P=20; // for the iteration process we can change it to higher vals.
 s=1;
 while s<=P
-    constn=consto;
+    Vparamnew=Vparam;
     k=1
-        
         while k<=3
         if(k==1) then 
-            constn(k)=consto(k)+(-b+2*b*rand()) //adding random numbers to the initial guess.
+            Vparamnew(k)=Vparam(k)+(-b+2*b*rand()) //adding random numbers to the initial guess.
         elseif(k==2)
-            constn(k)=consto(k)+(-b+2*(b)*rand())
+            Vparamnew(k)=Vparam(k)+(-b+2*(b)*rand())
         else(k==3)
-            constn(k)=consto(k)+(-b/10+2*(b/10)*rand())    
+            Vparamnew(k)=Vparam(k)+(-b/10+2*(b/10)*rand())    
         end
-        
-        [y1,p1s0]=np1S0(constn)
-        N=length(p1s0)
+        deltaObtNew = PFMRK5(Vparamnew, deltaExpt)
+//        [y1,p1s0]=np1S0(constn)
+        N=length(deltaObt)
 //////////////////////////////////////////////////////////
-nun = (abs((y1(1:N)'.*(180/%pi))-p1s0(1:N)')).^(2); //to calculate Mean Square Error
+nun = (abs((deltaExpt(1:N)')-deltaObtNew(1:N)')).^(2); //to calculate Mean Square Error
 denn= 1 // for MSE
 ////////////////////////////////////////////////////
 chin=mean(nun.*(denn.^(-1))); // MSE
 if (chin)<(chi) then
-    consto=constn;
+    Vparam=Vparamnew;
     chisqmin=chin;
     chi=chin;
 else
-    constn=consto
+    Vparamnew=Vparam
     chisqmin=chi;
 end
 k=k+1;
-disp([(y1(1:N)'.*(180/%pi)),p1s0(1:N)'],chisqmin,[constn])
+disp([(deltaObtNew(1:N)'),deltaExpt(1:N)'],chisqmin,[Vparamnew])
 end   
 s=s+1;
 end
 endfunction 
-    
-
