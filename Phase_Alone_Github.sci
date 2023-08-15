@@ -13,7 +13,7 @@ function [k, fac] = input(ObjVar)
     muD = (mn*mp)/(mn + mp);
     hbarc = 197.329
     fac = hbarc^2/(2*muD) //= 41.47\\
-    ECoM = Elab*mn/(mn+mp) 
+    ECoM = Elab*mp/(mn+mp)   //ECoM = Elab*mass of target/(mass of projectile + mass of target) 
     k = sqrt(ECoM/fac)
 endfunction
 
